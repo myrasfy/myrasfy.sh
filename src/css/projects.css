@@ -1,0 +1,212 @@
+#projects {
+  --per: 5;
+}
+
+#projects .section-inner {
+  padding-block: clamp(4.5rem, 10vh, 7rem) var(--sp-6);
+  overflow: hidden;
+}
+
+.projects__head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--sp-5);
+  flex-wrap: wrap;
+}
+
+.carousel__controls {
+  display: flex;
+  gap: var(--sp-2);
+}
+.carousel__controls[hidden],
+.carousel__dots[hidden] {
+  display: none;
+}
+.carousel__btn {
+  display: inline-grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  color: var(--fg);
+  background: var(--bg-2);
+  transition:
+    background var(--dur-1) var(--ease-soft),
+    transform var(--dur-1) var(--ease-soft),
+    border-color var(--dur-1) var(--ease-soft);
+}
+.carousel__btn:hover {
+  background: var(--bg-3);
+  transform: translateY(-2px);
+}
+.carousel__btn:active {
+  transform: translateY(0);
+}
+.carousel__btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.carousel {
+  position: relative;
+  margin-top: var(--sp-6);
+}
+.carousel__viewport {
+  overflow: hidden;
+}
+.carousel__track {
+  display: flex;
+  gap: var(--sp-4);
+  will-change: transform;
+  cursor: grab;
+  touch-action: pan-y;
+}
+.carousel__track.dragging {
+  cursor: grabbing;
+  user-select: none;
+}
+.carousel__track.animate {
+  transition: transform 0.6s var(--ease-out);
+}
+
+.project {
+  flex: 0 0 calc((100% - (var(--per) - 1) * var(--sp-4)) / var(--per));
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: var(--r-3);
+  overflow: hidden;
+  transition:
+    border-color var(--dur-2) var(--ease-soft),
+    transform var(--dur-2) var(--ease-soft);
+}
+.project:hover {
+  border-color: var(--line-strong);
+  transform: translateY(-4px);
+}
+
+.project__thumb {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background: var(--bg-term);
+  overflow: hidden;
+}
+.project__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.03);
+  transition:
+    transform var(--dur-3) var(--ease-out),
+    filter var(--dur-3) var(--ease-soft);
+}
+.project:hover .project__thumb img {
+  transform: scale(1.05);
+  filter: grayscale(0.2);
+}
+
+.project__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  padding: var(--sp-4);
+  flex: 1;
+}
+.project__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-600);
+  letter-spacing: -0.01em;
+}
+.project__desc {
+  font-size: var(--fs-400);
+  color: var(--fg-1);
+  line-height: 1.55;
+}
+.project__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: auto;
+}
+.project__tags span {
+  font-family: var(--font-mono);
+  font-size: var(--fs-300);
+  color: var(--fg-2);
+  padding: 0.25em 0.6em;
+  border: 1px solid var(--line);
+  border-radius: var(--r-pill);
+}
+.project__links {
+  display: flex;
+  gap: var(--sp-4);
+  padding-top: var(--sp-1);
+}
+.project__links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  font-family: var(--font-mono);
+  font-size: var(--fs-300);
+  color: var(--fg-2);
+  transition: color var(--dur-1) var(--ease-soft);
+}
+.project__links a:hover {
+  color: var(--white);
+}
+.project__links svg {
+  width: 15px;
+  height: 15px;
+}
+
+.carousel__dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: var(--sp-6);
+}
+.carousel__dots button {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--fg-3);
+  transition: all var(--dur-2) var(--ease-soft);
+}
+.carousel__dots button::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+}
+.carousel__dots button:hover {
+  background: var(--fg-1);
+}
+.carousel__dots button.active {
+  width: 24px;
+  border-radius: var(--r-pill);
+  background: var(--white);
+}
+
+@media (max-width: 1180px) {
+  #projects {
+    --per: 4;
+  }
+}
+@media (max-width: 940px) {
+  #projects {
+    --per: 3;
+  }
+}
+@media (max-width: 720px) {
+  #projects {
+    --per: 2;
+  }
+}
+@media (max-width: 520px) {
+  #projects {
+    --per: 1;
+  }
+}

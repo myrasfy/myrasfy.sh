@@ -1,0 +1,71 @@
+:root {
+  --bg: #0a0a0b;
+  --bg-1: #0e0e10;
+  --bg-2: #131316;
+  --bg-3: #1a1a1e;
+  --bg-term: #0c0c0d;
+
+  --line: rgba(255, 255, 255, 0.09);
+  --line-soft: rgba(255, 255, 255, 0.05);
+  --line-strong: rgba(255, 255, 255, 0.16);
+
+  --fg: #ededee;
+  --fg-1: #b8b8bc;
+  --fg-2: #7d7d83;
+  --fg-3: #55555b;
+  --white: #ffffff;
+
+  --accent: #ffffff;
+
+  --font-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Archivo", system-ui, -apple-system, sans-serif;
+  --font-mono:
+    "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --fs-300: clamp(0.72rem, 0.7rem + 0.1vw, 0.78rem);
+  --fs-400: clamp(0.84rem, 0.8rem + 0.2vw, 0.95rem);
+  --fs-500: clamp(1rem, 0.95rem + 0.3vw, 1.15rem);
+  --fs-600: clamp(1.3rem, 1.1rem + 1vw, 1.7rem);
+  --fs-700: clamp(1.7rem, 1.35rem + 1.7vw, 2.4rem);
+  --fs-800: clamp(2.4rem, 1.7rem + 3.4vw, 4rem);
+  --fs-900: clamp(3.2rem, 2rem + 6vw, 6.2rem);
+
+  --lh-tight: 1.04;
+  --lh-snug: 1.25;
+  --lh-body: 1.6;
+
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.5rem;
+  --sp-6: 2rem;
+  --sp-7: 3rem;
+  --sp-8: 4rem;
+  --sp-9: 6rem;
+
+  --gutter: clamp(1.25rem, 5vw, 6rem);
+  --maxw: 1320px;
+
+  --r-1: 4px;
+  --r-2: 8px;
+  --r-3: 12px;
+  --r-pill: 999px;
+
+  --shadow-1:
+    0 1px 0 rgba(255, 255, 255, 0.04) inset, 0 10px 30px rgba(0, 0, 0, 0.5);
+  --shadow-cover: 0 -30px 60px rgba(0, 0, 0, 0.65);
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-soft: cubic-bezier(0.25, 0.8, 0.25, 1);
+  --dur-1: 0.18s;
+  --dur-2: 0.35s;
+  --dur-3: 0.6s;
+  --dur-4: 0.9s;
+
+  --z-dots: 40;
+  --z-nav: 60;
+  --z-boot: 100;
+
+  color-scheme: dark;
+}
